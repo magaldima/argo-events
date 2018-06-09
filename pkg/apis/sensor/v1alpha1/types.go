@@ -38,6 +38,7 @@ const (
 	SignalTypeCalendar SignalType = "Calendar"
 	SignalTypeResource SignalType = "Resource"
 	SignalTypeWebhook  SignalType = "Webhook"
+	SignalTypeDocker   SignalType = "Docker"
 )
 
 // StreamType is the type of a stream
@@ -291,26 +292,14 @@ type WebhookSignal struct {
 
 // DockerSignal defines events reported by different docker objects
 type DockerSignal struct {
+	// Type of docker event. e.g. container, image, daemon, plugin, network etc.
 	Type string `json:"type" protobuf:"bytes,1,opt,name=type"`
 
-	Filters map[string]string `json:"filters" protobuf="bytes,2,opt,name=filters"`
-}
+	// Action is event action. See https://docs.docker.com/engine/reference/commandline/events/#extended-description
+	Action string `json:"action" protobuf:"bytes,2,opt,name=action"`
 
-// DockerAuthConfig defines authentication configuration for docker client
-type DockerAuthConfig struct {
-	Username apiv1.SecretKeySelector `json:"username" protobuf:"bytes,1,opt,name=username"`
-
-	Password apiv1.SecretKeySelector `json:"password" protobuf:"bytes,2,opt,name=password"`
-
-	Auth apiv1.SecretKeySelector `json:"auth,omitempty" protobuf:"bytes,3,opt,name=auth"`
-
-	Email apiv1.SecretKeySelector `json:"email,omitempty" protobuf:"bytes,4,opt,name=email"`
-
-	ServerAddress apiv1.SecretKeySelector `json:"server_address,omitempty" protobuf:"bytes,5,opt,name=server_address"`
-
-	IdentityToken apiv1.SecretKeySelector `json:"identity_token,omitempty" protobuf:"bytes,6,opt,name=identity_token"`
-
-	RegistryToken apiv1.SecretKeySelector `json:"registry_token,omitempty" protobuf:"bytes,7,opt,name=registry_token"`
+	// Filters is used to filter out docker events.
+	Filters map[string]string `json:"filters" protobuf="bytes,3,opt,name=filters"`
 }
 
 // Message represents a message on a queue

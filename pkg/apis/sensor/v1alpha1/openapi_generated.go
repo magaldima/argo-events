@@ -32,7 +32,6 @@ func GetOpenAPIDefinitions(ref common.ReferenceCallback) map[string]common.OpenA
 		"github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.ArtifactLocation":  schema_pkg_apis_sensor_v1alpha1_ArtifactLocation(ref),
 		"github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.ArtifactSignal":    schema_pkg_apis_sensor_v1alpha1_ArtifactSignal(ref),
 		"github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.CalendarSignal":    schema_pkg_apis_sensor_v1alpha1_CalendarSignal(ref),
-		"github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.DockerAuthConfig":  schema_pkg_apis_sensor_v1alpha1_DockerAuthConfig(ref),
 		"github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.DockerSignal":      schema_pkg_apis_sensor_v1alpha1_DockerSignal(ref),
 		"github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.EscalationPolicy":  schema_pkg_apis_sensor_v1alpha1_EscalationPolicy(ref),
 		"github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.GroupVersionKind":  schema_pkg_apis_sensor_v1alpha1_GroupVersionKind(ref),
@@ -186,56 +185,6 @@ func schema_pkg_apis_sensor_v1alpha1_CalendarSignal(ref common.ReferenceCallback
 	}
 }
 
-func schema_pkg_apis_sensor_v1alpha1_DockerAuthConfig(ref common.ReferenceCallback) common.OpenAPIDefinition {
-	return common.OpenAPIDefinition{
-		Schema: spec.Schema{
-			SchemaProps: spec.SchemaProps{
-				Description: "DockerAuthConfig defines authentication configuration for docker client",
-				Properties: map[string]spec.Schema{
-					"username": {
-						SchemaProps: spec.SchemaProps{
-							Ref: ref("k8s.io/api/core/v1.SecretKeySelector"),
-						},
-					},
-					"password": {
-						SchemaProps: spec.SchemaProps{
-							Ref: ref("k8s.io/api/core/v1.SecretKeySelector"),
-						},
-					},
-					"auth": {
-						SchemaProps: spec.SchemaProps{
-							Ref: ref("k8s.io/api/core/v1.SecretKeySelector"),
-						},
-					},
-					"email": {
-						SchemaProps: spec.SchemaProps{
-							Ref: ref("k8s.io/api/core/v1.SecretKeySelector"),
-						},
-					},
-					"server_address": {
-						SchemaProps: spec.SchemaProps{
-							Ref: ref("k8s.io/api/core/v1.SecretKeySelector"),
-						},
-					},
-					"identity_token": {
-						SchemaProps: spec.SchemaProps{
-							Ref: ref("k8s.io/api/core/v1.SecretKeySelector"),
-						},
-					},
-					"registry_token": {
-						SchemaProps: spec.SchemaProps{
-							Ref: ref("k8s.io/api/core/v1.SecretKeySelector"),
-						},
-					},
-				},
-				Required: []string{"username", "password"},
-			},
-		},
-		Dependencies: []string{
-			"k8s.io/api/core/v1.SecretKeySelector"},
-	}
-}
-
 func schema_pkg_apis_sensor_v1alpha1_DockerSignal(ref common.ReferenceCallback) common.OpenAPIDefinition {
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
@@ -244,13 +193,22 @@ func schema_pkg_apis_sensor_v1alpha1_DockerSignal(ref common.ReferenceCallback) 
 				Properties: map[string]spec.Schema{
 					"type": {
 						SchemaProps: spec.SchemaProps{
-							Type:   []string{"string"},
-							Format: "",
+							Description: "Type of docker event. e.g. container, image, daemon, plugin, network etc.",
+							Type:        []string{"string"},
+							Format:      "",
+						},
+					},
+					"action": {
+						SchemaProps: spec.SchemaProps{
+							Description: "Action is event action. See https://docs.docker.com/engine/reference/commandline/events/#extended-description",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 					"filters": {
 						SchemaProps: spec.SchemaProps{
-							Type: []string{"object"},
+							Description: "Filters is used to filter out docker events.",
+							Type:        []string{"object"},
 							AdditionalProperties: &spec.SchemaOrBool{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
@@ -262,7 +220,7 @@ func schema_pkg_apis_sensor_v1alpha1_DockerSignal(ref common.ReferenceCallback) 
 						},
 					},
 				},
-				Required: []string{"type", "filters"},
+				Required: []string{"type", "action", "filters"},
 			},
 		},
 		Dependencies: []string{},
