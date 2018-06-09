@@ -141,8 +141,11 @@ type Signal struct {
 	// Webhook defines a HTTP notification dependency
 	Webhook *WebhookSignal `json:"webhook,omitempty" protobuf:"bytes,10,opt,name=webhook"`
 
+	// Docker defines a docker event dependency. See https://docs.docker.com/engine/reference/commandline/events/
+	Docker *DockerSignal `json:"docker,omitempty" protobuf:"bytes,11,opt,name=docker"`
+
 	// Constraints and rules governing tolerations of success and overrides
-	Constraints SignalConstraints `json:"constraints,omitempty" protobuf:"bytes,11,opt,name=constraints"`
+	Constraints SignalConstraints `json:"constraints,omitempty" protobuf:"bytes,12,opt,name=constraints"`
 }
 
 // ArtifactSignal describes an external object dependency
@@ -284,6 +287,30 @@ type WebhookSignal struct {
 	// Method is HTTP request method that indicates the desired action to be performed for a given resource.
 	// See RFC7231 Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content
 	Method string `json:"method" protobuf:"bytes,3,opt,name=method"`
+}
+
+// DockerSignal defines events reported by different docker objects
+type DockerSignal struct {
+	Type string `json:"type" protobuf:"bytes,1,opt,name=type"`
+
+	Filters map[string]string `json:"filters" protobuf="bytes,2,opt,name=filters"`
+}
+
+// DockerAuthConfig defines authentication configuration for docker client
+type DockerAuthConfig struct {
+	Username apiv1.SecretKeySelector `json:"username" protobuf:"bytes,1,opt,name=username"`
+
+	Password apiv1.SecretKeySelector `json:"password" protobuf:"bytes,2,opt,name=password"`
+
+	Auth apiv1.SecretKeySelector `json:"auth,omitempty" protobuf:"bytes,3,opt,name=auth"`
+
+	Email apiv1.SecretKeySelector `json:"email,omitempty" protobuf:"bytes,4,opt,name=email"`
+
+	ServerAddress apiv1.SecretKeySelector `json:"server_address,omitempty" protobuf:"bytes,5,opt,name=server_address"`
+
+	IdentityToken apiv1.SecretKeySelector `json:"identity_token,omitempty" protobuf:"bytes,6,opt,name=identity_token"`
+
+	RegistryToken apiv1.SecretKeySelector `json:"registry_token,omitempty" protobuf:"bytes,7,opt,name=registry_token"`
 }
 
 // Message represents a message on a queue

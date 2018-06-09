@@ -32,6 +32,8 @@ func GetOpenAPIDefinitions(ref common.ReferenceCallback) map[string]common.OpenA
 		"github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.ArtifactLocation":  schema_pkg_apis_sensor_v1alpha1_ArtifactLocation(ref),
 		"github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.ArtifactSignal":    schema_pkg_apis_sensor_v1alpha1_ArtifactSignal(ref),
 		"github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.CalendarSignal":    schema_pkg_apis_sensor_v1alpha1_CalendarSignal(ref),
+		"github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.DockerAuthConfig":  schema_pkg_apis_sensor_v1alpha1_DockerAuthConfig(ref),
+		"github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.DockerSignal":      schema_pkg_apis_sensor_v1alpha1_DockerSignal(ref),
 		"github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.EscalationPolicy":  schema_pkg_apis_sensor_v1alpha1_EscalationPolicy(ref),
 		"github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.GroupVersionKind":  schema_pkg_apis_sensor_v1alpha1_GroupVersionKind(ref),
 		"github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.Kafka":             schema_pkg_apis_sensor_v1alpha1_Kafka(ref),
@@ -178,6 +180,89 @@ func schema_pkg_apis_sensor_v1alpha1_CalendarSignal(ref common.ReferenceCallback
 					},
 				},
 				Required: []string{"schedule", "interval", "recurrence"},
+			},
+		},
+		Dependencies: []string{},
+	}
+}
+
+func schema_pkg_apis_sensor_v1alpha1_DockerAuthConfig(ref common.ReferenceCallback) common.OpenAPIDefinition {
+	return common.OpenAPIDefinition{
+		Schema: spec.Schema{
+			SchemaProps: spec.SchemaProps{
+				Description: "DockerAuthConfig defines authentication configuration for docker client",
+				Properties: map[string]spec.Schema{
+					"username": {
+						SchemaProps: spec.SchemaProps{
+							Ref: ref("k8s.io/api/core/v1.SecretKeySelector"),
+						},
+					},
+					"password": {
+						SchemaProps: spec.SchemaProps{
+							Ref: ref("k8s.io/api/core/v1.SecretKeySelector"),
+						},
+					},
+					"auth": {
+						SchemaProps: spec.SchemaProps{
+							Ref: ref("k8s.io/api/core/v1.SecretKeySelector"),
+						},
+					},
+					"email": {
+						SchemaProps: spec.SchemaProps{
+							Ref: ref("k8s.io/api/core/v1.SecretKeySelector"),
+						},
+					},
+					"server_address": {
+						SchemaProps: spec.SchemaProps{
+							Ref: ref("k8s.io/api/core/v1.SecretKeySelector"),
+						},
+					},
+					"identity_token": {
+						SchemaProps: spec.SchemaProps{
+							Ref: ref("k8s.io/api/core/v1.SecretKeySelector"),
+						},
+					},
+					"registry_token": {
+						SchemaProps: spec.SchemaProps{
+							Ref: ref("k8s.io/api/core/v1.SecretKeySelector"),
+						},
+					},
+				},
+				Required: []string{"username", "password"},
+			},
+		},
+		Dependencies: []string{
+			"k8s.io/api/core/v1.SecretKeySelector"},
+	}
+}
+
+func schema_pkg_apis_sensor_v1alpha1_DockerSignal(ref common.ReferenceCallback) common.OpenAPIDefinition {
+	return common.OpenAPIDefinition{
+		Schema: spec.Schema{
+			SchemaProps: spec.SchemaProps{
+				Description: "DockerSignal defines events reported by different docker objects",
+				Properties: map[string]spec.Schema{
+					"type": {
+						SchemaProps: spec.SchemaProps{
+							Type:   []string{"string"},
+							Format: "",
+						},
+					},
+					"filters": {
+						SchemaProps: spec.SchemaProps{
+							Type: []string{"object"},
+							AdditionalProperties: &spec.SchemaOrBool{
+								Schema: &spec.Schema{
+									SchemaProps: spec.SchemaProps{
+										Type:   []string{"string"},
+										Format: "",
+									},
+								},
+							},
+						},
+					},
+				},
+				Required: []string{"type", "filters"},
 			},
 		},
 		Dependencies: []string{},
@@ -1010,6 +1095,12 @@ func schema_pkg_apis_sensor_v1alpha1_Signal(ref common.ReferenceCallback) common
 							Ref:         ref("github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.WebhookSignal"),
 						},
 					},
+					"docker": {
+						SchemaProps: spec.SchemaProps{
+							Description: "Docker defines a docker event dependency. See https://docs.docker.com/engine/reference/commandline/events/",
+							Ref:         ref("github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.DockerSignal"),
+						},
+					},
 					"constraints": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Constraints and rules governing tolerations of success and overrides",
@@ -1021,7 +1112,7 @@ func schema_pkg_apis_sensor_v1alpha1_Signal(ref common.ReferenceCallback) common
 			},
 		},
 		Dependencies: []string{
-			"github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.AMQP", "github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.ArtifactSignal", "github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.CalendarSignal", "github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.Kafka", "github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.MQTT", "github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.NATS", "github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.ResourceSignal", "github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.SignalConstraints", "github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.WebhookSignal"},
+			"github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.AMQP", "github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.ArtifactSignal", "github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.CalendarSignal", "github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.DockerSignal", "github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.Kafka", "github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.MQTT", "github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.NATS", "github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.ResourceSignal", "github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.SignalConstraints", "github.com/blackrock/axis/pkg/apis/sensor/v1alpha1.WebhookSignal"},
 	}
 }
 
