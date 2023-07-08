@@ -45,7 +45,7 @@ require (
 	github.com/imdario/mergo v0.3.16
 	github.com/itchyny/gojq v0.12.13
 	github.com/joncalhoun/qson v0.0.0-20200422171543-84433dcd3da0
-	github.com/ktrysmt/go-bitbucket v0.9.60
+	github.com/ktrysmt/go-bitbucket v0.9.61
 	github.com/minio/minio-go/v7 v7.0.59
 	github.com/mitchellh/hashstructure/v2 v2.0.2
 	github.com/mitchellh/mapstructure v1.5.0
@@ -70,7 +70,7 @@ require (
 	github.com/yuin/gopher-lua v1.1.0
 	go.uber.org/ratelimit v0.2.0
 	go.uber.org/zap v1.24.0
-	golang.org/x/crypto v0.10.0
+	golang.org/x/crypto v0.11.0
 	google.golang.org/api v0.129.0
 	google.golang.org/grpc v1.56.1
 	gopkg.in/jcmturner/gokrb5.v5 v5.3.0
@@ -86,7 +86,7 @@ require (
 )
 
 require (
-	cloud.google.com/go/compute v1.19.3 // indirect
+	cloud.google.com/go/compute v1.20.1 // indirect
 	github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4 // indirect
 	github.com/99designs/keyring v1.2.1 // indirect
 	github.com/AthenZ/athenz v1.10.39 // indirect
@@ -271,12 +271,12 @@ require (
 	go.uber.org/atomic v1.9.0 // indirect
 	go.uber.org/multierr v1.8.0 // indirect
 	golang.org/x/mod v0.10.0 // indirect
-	golang.org/x/net v0.11.0 // indirect
-	golang.org/x/oauth2 v0.9.0 // indirect
+	golang.org/x/net v0.12.0 // indirect
+	golang.org/x/oauth2 v0.10.0 // indirect
 	golang.org/x/sync v0.3.0 // indirect
-	golang.org/x/sys v0.9.0 // indirect
-	golang.org/x/term v0.9.0 // indirect
-	golang.org/x/text v0.10.0 // indirect
+	golang.org/x/sys v0.10.0 // indirect
+	golang.org/x/term v0.10.0 // indirect
+	golang.org/x/text v0.11.0 // indirect
 	golang.org/x/time v0.3.0 // indirect
 	golang.org/x/tools v0.9.3 // indirect
 	gomodules.xyz/jsonpatch/v2 v2.2.0 // indirect
