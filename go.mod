@@ -75,7 +75,7 @@ require (
 	github.com/tidwall/sjson v1.2.4
 	github.com/xanzy/go-gitlab v0.90.0
 	github.com/yuin/gopher-lua v1.1.0
-	go.uber.org/ratelimit v0.2.0
+	go.uber.org/ratelimit v0.3.0
 	go.uber.org/zap v1.25.0
 	golang.org/x/crypto v0.12.0
 	google.golang.org/api v0.136.0
@@ -178,7 +178,6 @@ require (
 	github.com/ProtonMail/go-crypto v0.0.0-20230717121422-5aa5874ade95 // indirect
 	github.com/acomagu/bufpipe v1.0.4 // indirect
 	github.com/ajg/form v1.5.1 // indirect
-	github.com/andres-erbsen/clock v0.0.0-20160526145045-9e14626cd129 // indirect
 	github.com/ardielle/ardielle-go v1.5.2 // indirect
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2 // indirect
 	github.com/awalterschulze/gographviz v0.0.0-20200901124122-0eecad45bd71 // indirect
