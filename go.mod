@@ -25,7 +25,7 @@ require (
 	github.com/argoproj/pkg v0.13.6
 	github.com/aws/aws-sdk-go v1.44.209
 	github.com/blushft/go-diagrams v0.0.0-20201006005127-c78c821223d9
-	github.com/bradleyfalzon/ghinstallation/v2 v2.6.0
+	github.com/bradleyfalzon/ghinstallation/v2 v2.7.0
 	github.com/cloudevents/sdk-go/v2 v2.14.0
 	github.com/colinmarc/hdfs v1.1.4-0.20180802165501-48eb8d6c34a9
 	github.com/eclipse/paho.mqtt.golang v1.4.3
@@ -121,7 +121,7 @@ require (
 	github.com/golang-jwt/jwt/v5 v5.0.0 // indirect
 	github.com/google/gnostic-models v0.6.8 // indirect
 	github.com/google/go-github/v41 v41.0.0 // indirect
-	github.com/google/go-github/v53 v53.2.0 // indirect
+	github.com/google/go-github/v55 v55.0.0 // indirect
 	github.com/google/s2a-go v0.1.7 // indirect
 	github.com/googleapis/enterprise-certificate-proxy v0.2.5 // indirect
 	github.com/gregdel/pushover v1.1.0 // indirect
