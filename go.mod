@@ -1,6 +1,7 @@
 module github.com/argoproj/argo-events
 
-go 1.20
+go 1.23.0
+
 toolchain go1.24.1
 
 retract v1.15.1 // Contains retractions only.
@@ -27,7 +28,7 @@ require (
 	github.com/aws/aws-sdk-go v1.44.209
 	github.com/blushft/go-diagrams v0.0.0-20201006005127-c78c821223d9
 	github.com/bradleyfalzon/ghinstallation/v2 v2.14.0
-	github.com/cloudevents/sdk-go/v2 v2.15.2
+	github.com/cloudevents/sdk-go/v2 v2.16.0
 	github.com/colinmarc/hdfs v1.1.4-0.20180802165501-48eb8d6c34a9
 	github.com/eclipse/paho.mqtt.golang v1.5.0
 	github.com/emitter-io/go/v2 v2.1.0
