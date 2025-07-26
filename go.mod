@@ -81,7 +81,7 @@ require (
 	go.uber.org/zap v1.27.0
 	golang.org/x/crypto v0.40.0
 	google.golang.org/api v0.242.0
-	google.golang.org/grpc v1.73.0
+	google.golang.org/grpc v1.74.2
 	gopkg.in/jcmturner/gokrb5.v5 v5.3.0
 	k8s.io/api v0.33.0
 	k8s.io/apimachinery v0.33.0
@@ -177,7 +177,7 @@ require (
 	go.yaml.in/yaml/v2 v2.4.2 // indirect
 	gomodules.xyz/envconfig v1.3.1-0.20190308184047-426f31af0d45 // indirect
 	gomodules.xyz/notify v0.1.1 // indirect
-	google.golang.org/genproto/googleapis/api v0.0.0-20250505200425-f936aa4a68b2 // indirect
+	google.golang.org/genproto/googleapis/api v0.0.0-20250528174236-200df99c418a // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20250603155806-513f23925822 // indirect
 	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
 	gopkg.in/evanphx/json-patch.v4 v4.12.0 // indirect
@@ -226,7 +226,7 @@ require (
 	github.com/fatih/structs v1.1.0 // indirect
 	github.com/go-git/gcfg v1.5.1-0.20230307220236-3a3c6141e376 // indirect
 	github.com/go-git/go-billy/v5 v5.6.2 // indirect
-	github.com/go-logr/logr v1.4.2 // indirect
+	github.com/go-logr/logr v1.4.3 // indirect
 	github.com/go-openapi/analysis v0.23.0 // indirect
 	github.com/go-openapi/errors v0.22.0 // indirect
 	github.com/go-openapi/jsonpointer v0.21.0 // indirect
@@ -238,7 +238,7 @@ require (
 	github.com/go-openapi/validate v0.24.0 // indirect
 	github.com/gobuffalo/flect v1.0.3 // indirect
 	github.com/golang-jwt/jwt/v4 v4.5.2 // indirect
-	github.com/golang/glog v1.2.4 // indirect
+	github.com/golang/glog v1.2.5 // indirect
 	github.com/golang/groupcache v0.0.0-20241129210726-2c02b8208cf8 // indirect
 	github.com/golang/snappy v1.0.0 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
