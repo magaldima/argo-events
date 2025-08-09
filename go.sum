@@ -44,8 +44,8 @@ github.com/Azure/azure-sdk-for-go/sdk/azidentity/cache v0.3.2 h1:yz1bePFlP5Vws5+
 github.com/Azure/azure-sdk-for-go/sdk/azidentity/cache v0.3.2/go.mod h1:Pa9ZNPuoNu/GztvBSKk9J1cDJW6vk/n0zLtV4mgd8N8=
 github.com/Azure/azure-sdk-for-go/sdk/internal v1.11.2 h1:9iefClla7iYpfYWdzPCRDozdmndjTm8DXdpCzPajMgA=
 github.com/Azure/azure-sdk-for-go/sdk/internal v1.11.2/go.mod h1:XtLgD3ZD34DAaVIIAyG3objl5DynM3CQ/vMcbBNJZGI=
-github.com/Azure/azure-sdk-for-go/sdk/messaging/azservicebus v1.9.1 h1:CRZwf68N55u7ZZo3Xx2ynuqEA6k5GZfwsEUkU8qsAPk=
-github.com/Azure/azure-sdk-for-go/sdk/messaging/azservicebus v1.9.1/go.mod h1:NydgUaroiShkgOcb+X6OUdS3RalWBrvDNtOyFHJtsZY=
+github.com/Azure/azure-sdk-for-go/sdk/messaging/azservicebus v1.10.0 h1:kE5kpeiSqu4jcCQ/sWuyggMXJ/pT6oQ99+8hwPmyeJ0=
+github.com/Azure/azure-sdk-for-go/sdk/messaging/azservicebus v1.10.0/go.mod h1:IAN3Z0DMtehoxoQQnfqg1891z1P7GNoDryKtFcAyMBI=
 github.com/Azure/azure-sdk-for-go/sdk/storage/azqueue v1.0.1 h1:qvrrnQ2mIjwY7IVlQuNB0ma43Nr74+9ZTZJ60KlmlV4=
 github.com/Azure/azure-sdk-for-go/sdk/storage/azqueue v1.0.1/go.mod h1:FkF/Az07vR3S4sBdjCuisznWfFWOD8u6Ibm/g/oyDAk=
 github.com/Azure/go-amqp v1.4.0 h1:Xj3caqi4comOF/L1Uc5iuBxR/pB6KumejC01YQOqOR4=
