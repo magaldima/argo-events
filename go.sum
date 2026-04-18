@@ -138,8 +138,8 @@ github.com/antonmedv/expr v1.15.5 h1:y0Iz3cEwmpRz5/r3w4qQR0MfIqJGdGM1zbhD/v0G5Vg
 github.com/antonmedv/expr v1.15.5/go.mod h1:0E/6TxnOlRNp81GMzX9QfDPAmHo2Phg00y4JUv1ihsE=
 github.com/apache/openwhisk-client-go v0.0.0-20190915054138-716c6f973eb2 h1:mOsBfI/27csXzqNYu7XAf14RPGsRrcXJ8fjaYIhkuVU=
 github.com/apache/openwhisk-client-go v0.0.0-20190915054138-716c6f973eb2/go.mod h1:jLLKYP7+1+LFlIJW1n9U1gqeveLM1HIwa4ZHNOFxjPw=
-github.com/apache/pulsar-client-go v0.18.0 h1:YsySoOds7WCXkRcOKHb85gk/v1Jndp+2oCkkRQEowUA=
-github.com/apache/pulsar-client-go v0.18.0/go.mod h1:GKmTD1u5YLuhUnoVTNGdhdGNAYhoglWNWgwLJZTljAw=
+github.com/apache/pulsar-client-go v0.19.0 h1:NHqYXgIUAEpuyBSVAUmYgcM6VFHFygsthxa9a0CrCvg=
+github.com/apache/pulsar-client-go v0.19.0/go.mod h1:/Zf8Q8bSSc6ndEJ8V1muIHf6ZWsMrHoQU+98Ww9pOeI=
 github.com/appscode/go v0.0.0-20191119085241-0887d8ec2ecc/go.mod h1:OawnOmAL4ZX3YaPdN+8HTNwBveT1jMsqP74moa9XUbE=
 github.com/ardielle/ardielle-go v1.5.2 h1:TilHTpHIQJ27R1Tl/iITBzMwiUGSlVfiVhwDNGM3Zj4=
 github.com/ardielle/ardielle-go v1.5.2/go.mod h1:I4hy1n795cUhaVt/ojz83SNVCYIGsAFAONtv2Dr7HUI=
